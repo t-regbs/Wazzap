@@ -58,6 +58,18 @@
                 android:name="username"
                 app:argType="string"
                 app:nullable="false" />
+            <action
+                android:id="@+id/action_home_fragment_to_addPostFragment"
+                app:destination="@id/addPostFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addPostFragment"
+            android:name="com.example.wazzap.ui.addpost.AddPostFragment"
+            android:label="fragment_add_post"
+            tools:layout="@layout/fragment_add_post" >
+            <action
+                android:id="@+id/action_addPostFragment_to_home_fragment"
+                app:destination="@id/home_fragment" />
         </fragment>
     </navigation>
 

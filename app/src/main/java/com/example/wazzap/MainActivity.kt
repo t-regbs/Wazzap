@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.wazzap.firebase.authentication.AuthenticationManager
 import com.example.wazzap.firebase.authentication.RC_SIGN_IN
+import com.example.wazzap.util.showToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK) {
                 navController.navigate(LoggedOutGraphDirections.loggedOutToLoggedIn(authenticationManager.getCurrentUser()))
             } else {
-                Toast.makeText(this, getString(R.string.sign_in_fail), Toast.LENGTH_SHORT).show()
+                showToast(getString(R.string.sign_in_fail))
             }
         }
     }

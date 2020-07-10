@@ -28,6 +28,7 @@
           android:id="@+id/author"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:text="@{post.author}"
           android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
           android:textColor="@android:color/darker_gray"
           tools:text="Author" />
@@ -41,6 +42,7 @@
           android:id="@+id/time"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:text="@{viewModel.mapToNormalisedDateText(post.timestamp)}"
           android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
           android:textColor="@android:color/darker_gray"
           tools:text="2009-12-31" />
@@ -51,6 +53,7 @@
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@{post.content}"
         android:layout_marginTop="@dimen/smallest_margin"
         android:layout_marginBottom="@dimen/smallest_margin"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
