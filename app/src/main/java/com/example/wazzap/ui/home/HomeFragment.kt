@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.wazzap.R
 import com.example.wazzap.databinding.FragmentHomeBinding
-import com.example.wazzap.ui.HomeFragmentArgs
+
 
 
 class HomeFragment : Fragment() {
@@ -18,14 +18,20 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentHomeBinding
-    private  lateinit var adapter: FeedAdapter
+    private val adapter by lazy { FeedAdapter(homeViewModel) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater).apply {
+            lifecycleOwner =  viewLifecycleOwner
+            viewModel = homeViewModel
+            postsFeed.adapter = adapter
+        }
+        setHasOptionsMenu(true)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

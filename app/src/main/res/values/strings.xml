@@ -6,4 +6,5 @@
     <string name="post">Post</string>
     <string name="type_here">Type here</string>
     <string name="logout">Logout</string>
+    <string name="sign_in_fail">Sign in failed</string>
 </resources>

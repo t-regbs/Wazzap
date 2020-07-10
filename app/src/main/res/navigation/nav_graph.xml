@@ -82,7 +82,7 @@
 
         <fragment
             android:id="@+id/login_fragment"
-            android:name="com.example.wazzap.ui.LoginFragment"
+            android:name="com.example.wazzap.ui.login.LoginFragment"
             tools:layout="@layout/fragment_login"/>
     </navigation>
 
