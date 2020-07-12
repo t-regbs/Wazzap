@@ -47,10 +47,12 @@ class AddPostFragment : Fragment() {
         if (postMessage.isNotEmpty()) {
             addPostViewModel.addPost(
                 postMessage,
-                {showToast(getString(R.string.posted_successfully))},
+                {
+                    showToast(getString(R.string.posted_successfully))
+                    val action = AddPostFragmentDirections.actionAddPostFragmentToHomeFragment()
+                    findNavController().navigate(action)
+                },
                 {showToast(getString(R.string.posting_failed))})
-            val action = AddPostFragmentDirections.actionAddPostFragmentToHomeFragment(addPostViewModel.getUser())
-            findNavController().navigate(action)
         } else {
             showToast(getString(R.string.empty_post_message))
         }
